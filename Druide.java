@@ -44,23 +44,22 @@ public class Druide {
 		this.effetPotionMin = effetPotionMin;
 	}
 
-	public int preparerPotion() {
+	public void preparerPotion() {
 		Random rand = new Random();
-		int r = rand.nextInt(effetPotionMin, effetPotionMax);
-		if (r > 7) {
+		forcePotion = rand.nextInt(effetPotionMin, effetPotionMax);
+		if (forcePotion > 7) {
 			parler(" J'ai préparé\r\n" + "une super potion de force ");
 		} else {
 			parler("« Je  n'ai pas trouvé tous les ingrédients, ma potion estseulement de force");
 		}
-		System.out.println("ma force est :" + r);
-		return r;
+		System.out.println("ma force est :" + forcePotion);
+
 	}
 
 	public void booster(Gaulois g) {
 		if (g.getNom() != "Obélix") {
-			g.boirePotion(preparerPotion());
-		}
-		else {
+			g.boirePotion(forcePotion);
+		} else {
 			this.parler(" Non, Obélix !... Tu n’auras pas de potion magique !");
 		}
 	}

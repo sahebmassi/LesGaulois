@@ -29,7 +29,7 @@ public class Gaulois {
 	}*/
 	public void boirePotion(int f) {
 		
-		effetPotion=f*10*effetPotion; {
+		effetPotion=f; {
 		parler("merci druide je sens que ma force est "+ f +" fois décuplée.");}
 	}
 	public static void main(String[] args) {
